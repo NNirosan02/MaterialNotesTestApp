@@ -30,8 +30,6 @@ class MainFragment : Fragment(), MainRecyclerAdapter.NoteClickListener, View.OnC
     private lateinit var navController: NavController
     private lateinit var adapter: MainRecyclerAdapter
     private var firstLaunchOccurred: Boolean = false
-    private lateinit var deleteIcon: Drawable
-    private lateinit var editIcon: Drawable
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,8 +52,8 @@ class MainFragment : Fragment(), MainRecyclerAdapter.NoteClickListener, View.OnC
             viewModel.refreshData()
         }
 
-        deleteIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_delete)!!
-        editIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_edit)!!
+        val deleteIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_delete)!!
+        val editIcon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_edit)!!
         
         viewModel.noteData.observe(viewLifecycleOwner, Observer {
             adapter = MainRecyclerAdapter(requireContext(), it as MutableList<Note>, this)

@@ -19,6 +19,7 @@ import com.nnirosan.materialnotes.data.note.Note
 import com.nnirosan.materialnotes.databinding.FragmentDetailBinding
 import com.nnirosan.materialnotes.ui.shared.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_detail.*
+import org.koin.android.ext.android.get
 
 
 /**
@@ -26,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_detail.*
  */
 class DetailFragment : Fragment(), View.OnClickListener {
 
-    private lateinit var viewModel: SharedViewModel
+    val viewModel = get<SharedViewModel>()
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -42,7 +43,6 @@ class DetailFragment : Fragment(), View.OnClickListener {
             requireActivity(), R.id.nav_host
         )
 
-        viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         val binding = FragmentDetailBinding.inflate(
             inflater, container, false
         )
