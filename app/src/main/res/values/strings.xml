@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MaterialNotes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="note_title">Note Title</string>
+    <string name="note_content">Note Content</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit_dialog_title_text">Discard changes?</string>
+    <string name="exit_dialog_support_text">Would you like to save your changes?</string>
+    <string name="decline">Decline</string>
+    <string name="save">Save</string>
+</resources>
